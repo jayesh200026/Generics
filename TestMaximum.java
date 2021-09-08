@@ -1,75 +1,42 @@
 package com.generics;
 
-public class TestMaximum {
+public class TestMaximum<T extends Comparable<T>> {
 	
-	private static String a,b,c;
-	private static Integer x,y,z;
-	private static Float j,k,l;
+	 public  T a,b,c;
 	
 	
-	public void initInt(Integer x,Integer y,Integer z) {
-		this.x=x;
-		this.y=y;
-		this.z=z;
-		
-	}
-	public void initString(String a,String b,String c) {
-		this.a=a;
-		this.b=b;
-		this.c=c;
-		
-		
-	}
-	public void initFloat(Float j,Float  k,Float l) {
-		this.j=j;
-		this.k=k;
-		this.l=l;
-		
-	}
+	  
+	  public TestMaximum(T a,T b,T c) {
+		  this.a=a;
+		  this.b=b;
+		  this.c=c;
+	  }
 	
-	
-	
-	
-	public static void findStringMax(String a,String b,String c) {
-		String max=a;
-		if(b.compareTo(max)>0) {
-			
-			max=b;
-		}
-		if(c.compareTo(max)>0) {
-			max=c;
-		}
-		
-		System.out.println("Maximum of "+a+","+b+" and "+c+" is =" +max);
-		
-	}
-	public static void findIntMax(Integer a,Integer b,Integer c) {
-		Integer max=a;
-		if(b.compareTo(max)>0) {
-			
-			max=b;
-		}
-		if(c.compareTo(max)>0) {
-			max=c;
-		}
-		
-		System.out.println("Maximum of "+a+","+b+" and "+c+" is =" +max);
-		
-	}
-	
-	public static void findFloatMax(Float a,Float b,Float c) {
-		Float max=a;
-		if(b.compareTo(max)>0) {
-			
-			max=b;
-		}
-		if(c.compareTo(max)>0) {
-			max=c;
-		}
-		
-		System.out.println("Maximum of "+a+","+b+" and "+c+" is =" +max);
-		
-	}
 	
 
+	  
+	  public void findMax() {
+		  T res=TestMaximum.testMaximum(a, b, c);
+		  System.out.println("Maximum of " + a + "," + b + " and " + c + " is =" + res);
+	  }
+	
+	public static <T extends Comparable<T>> T testMaximum(T a, T b, T c) {
+		
+		T max =a;
+		
+		if (b.compareTo(max) > 0) {
+
+			max = b;
+		}
+		if (c.compareTo(max) > 0) {
+			max = c;
+		}
+
+		return max;
+
+	}
 }
+	
+	
+	
+	
